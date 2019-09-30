@@ -20,6 +20,7 @@ DEBUG = env('DEBUG')
 
 ALLOWED_HOSTS = [
     'llau.systems',
+    'www.llau.systems',
     'test.llau.systems',
     'llausys.herokuapp.com',
     'llau-systems-test.herokuapp.com',
