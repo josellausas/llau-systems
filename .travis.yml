@@ -1,19 +1,24 @@
 dist: xenial
 language: python
+services:
+  - postgresql
 env:
   global:
   - DEBUG=False
   - DJANGO_SETTINGS_MODULE=llausys.settings
   - ALLOWED_HOST=localhost
-  - DB_NAME=travis
-  - DB_HOST=127.0.0.1
+  - DB_NAME=travisci
+  - DB_HOST=localhost
   - DB_PORT=5432
-  - DB_USER=user
-  - DB_PASSWORD=pass
+  - DB_USER=normal
+  - DB_PASSWORD=normal
   - secure: "mzPpt/im4L/Yl6x1tnkCiNoQsce2FJGHucGFjZbDyQflC30LFafePRQ8zRnBYkIZk3HzzKGR3Qe30YFbPUSmhbYrWukbdXMGrAuWnFllhcAdSsRxU9Niid+eYXxIcl3YP3QIKbY9ifSRkC8RPsYjryp65MpnCbMCUTMQQgKGXxuBvD7uXWQQoFkIUZ2TRqBM9HuOhcNwHKMxQ+up/12EGz4rgmbA1PJTFbHesnVielDn4e5NaSxueEIrw2TreCRu7+NJ7/fUS7g6xplFe77RQHZ8Bj6MDQNlBMTwwNIugffovffoP4MgB+F+NEQxudPSRiiHy9V3LcqLszTz6iKYWvWcyyXUdOyI0WY4boq1z6ycTNmz5A72wXFlX8kDOGDRtV/h7g6uyIltNm0Orx6Ds8JMQFpiJMk3LTrVJ0j2mWweYhD50nhNqPWJ5OXjHb9pXhecY6nOQ0m1jyug292bWOY5BFG3hRbhewTmuCJEtJiAkPVTX78Ia+MC5po9LylfYu3PVNYF5Jdp3/uNwxMn7n2lKTxMGqumW6JbSLZSbVuceVMwP5Lm5xEmNmOMeHRNj/8oTJpNtP/014eJ8o70Xu84fXQiqBsEf81UHzbl0gq04LSFuzwHXsZGzo2HTJc9x1wenjz1RUW6EGJ9WiAK66OIVUtCo1CGQV4AO5APWjQ="
 python:
   - "3.7.1"
 install:
   - pip install -r requirements.txt
+before_script:
+  - psql -c "create database travisci;" -U postgres
+  - psql -c "CREATE USER normal WITH PASSWORD 'normal';" -U postgres
 script:
   - python manage.py test
