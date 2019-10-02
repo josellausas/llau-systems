@@ -1,4 +1,6 @@
-# LLau Systems
+# Llau Systems
+
+[![Build Status](https://travis-ci.com/zunware/llau-systems.svg?token=pPjgy1gbyCJtL7uhrXTa&branch=develop)](https://travis-ci.com/zunware/llau-systems)
 
 ## Install and run
 
