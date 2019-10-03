@@ -43,14 +43,20 @@ def blog_post_create(request):
     return render(request, 'blog/post_create.html', context)
 
 
+@login_required
 def blog_post_update(request, slug):
     obj = get_object_or_404(BlogPost, slug=slug)
-    # TODO: Make changes to object here
+    form = BlogPostModelForm(request.POST or None, instance=obj)
+
+    if form.is_valid():
+        form.save()
+
     context = {
-        'title': obj.title,
-        'obj': obj
+        'title': f"Update: {obj.title}",
+        'obj': obj,
+        'form': form
     }
-    return render(request, 'blog/post_update.html', context)
+    return render(request, 'blog/post_create.html', context)
 
 
 def blog_post_remove(request, slug):
