@@ -7,6 +7,11 @@
   <title>{{title|default:"LlauSys"}}</title>
 </head>
 <body>
+  {% if user.is_authenticated %}
+    <div style="background-color: green;">&nbsp;</div>
+  {% else %}
+    <div style="background-color: gray;"></div>
+  {% endif %}
   <section class="section">
     <div class="container animated bounceInRight">
       <h1 class="title">Llau Systems</h1>
