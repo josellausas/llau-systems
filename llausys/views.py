@@ -2,7 +2,10 @@ from django.shortcuts import render
 
 
 def home(request):
-    return render(request, 'index.html')
+    context = {
+        'title': 'LlauSys'
+    }
+    return render(request, 'index.html', context)
 
 
 def services(request):
@@ -13,20 +16,20 @@ def services(request):
 
 
 def about(request):
-    return render(request, 'about.html')
+    return render(request, 'about.html', {'title': 'LlauSys | About'})
 
 
 def projects(request):
-    return render(request, 'projects.html')
+    return render(request, 'projects.html', {'title': 'LlauSys | Projects'})
 
 
 def techs(request):
-    return render(request, 'techs.html')
+    return render(request, 'techs.html', {'title': 'LlauSys | Technologies'})
 
 
 def blog(request):
-    return render(request, 'blog.html')
+    return render(request, 'blog.html', {'title': 'LlauSys | Blog'})
 
 
 def contact(request):
-    return render(request, 'contact.html')
+    return render(request, 'contact.html', {'title': 'LlauSys | Contact'})

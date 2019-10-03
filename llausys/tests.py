@@ -53,6 +53,9 @@ class LlauSysProjectsTests(TestCase):
         content = self.response.content.decode("utf-8")
         self.assertIn("Projects</h2>", content)
 
+    def test_context(self):
+        self.assertIn('Projects', self.response.context['title'])
+
 
 class LlauSysTechnologiesTests(TestCase):
     def setUp(self):
@@ -66,6 +69,9 @@ class LlauSysTechnologiesTests(TestCase):
         content = self.response.content.decode("utf-8")
         self.assertIn("Technologies</h2>", content)
 
+    def test_context(self):
+        self.assertIn('Technologies', self.response.context['title'])
+
 
 class LlauSysBlogTests(TestCase):
     def setUp(self):
@@ -78,6 +84,9 @@ class LlauSysBlogTests(TestCase):
         self.assertEquals(200, self.response.status_code)
         content = self.response.content.decode("utf-8")
         self.assertIn("Blog</h2>", content)
+    
+    def test_context(self):
+        self.assertIn('Blog', self.response.context['title'])
 
 
 class LlauSysContactTests(TestCase):
@@ -91,3 +100,6 @@ class LlauSysContactTests(TestCase):
         self.assertEquals(200, self.response.status_code)
         content = self.response.content.decode("utf-8")
         self.assertIn("Contact</h2>", content)
+
+    def test_context(self):
+        self.assertIn('Contact', self.response.context['title'])
