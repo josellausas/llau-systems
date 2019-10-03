@@ -1,9 +1,11 @@
 from django.urls import path
 from . import views
 
+app_name = 'blog'
+
 urlpatterns = [
-    path('', views.blog_home),
-    path('<str:slug>/', views.blog_post_detail),
-    path('<str:slug>/edit/', views.blog_post_create),
-    path('<str:slug>/remove/', views.blog_post_remove),
+    path('', views.blog_home, name='index'),
+    path('<str:slug>/', views.blog_post_detail, name='detail'),
+    path('<str:slug>/edit/', views.blog_post_create, name='edit'),
+    path('<str:slug>/remove/', views.blog_post_remove, name='remove'),
 ]

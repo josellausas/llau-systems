@@ -8,7 +8,7 @@ from apps.blog.views import blog_post_create
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home),
-    path('blog/', include('apps.blog.urls')),
+    path('blog/', include('apps.blog.urls', namespace='blog')),
     path('blog-new/', blog_post_create),
     # TODO:
     re_path(r'^services?/$', views.services),

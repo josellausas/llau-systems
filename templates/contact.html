@@ -3,6 +3,10 @@
 {% block content %}
   <h2 class="title">Contact</h2>
   <section class="section">
-    <p class="content animated infinite bounce delay-2s">Coming soon...</p>
+    <form method='POST' action='.'> {% csrf_token %}
+      <input type="text" name="email">
+      <textarea name="content"></textarea>
+      <button type="submit">Send</button>
+    </form>
   </section>
 {% endblock content %}
