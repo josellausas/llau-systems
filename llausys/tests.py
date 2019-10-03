@@ -84,7 +84,7 @@ class LlauSysBlogTests(TestCase):
         self.assertEquals(200, self.response.status_code)
         content = self.response.content.decode("utf-8")
         self.assertIn("Blog</h2>", content)
-    
+
     def test_context(self):
         self.assertIn('Blog', self.response.context['title'])
 
