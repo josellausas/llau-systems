@@ -22,6 +22,7 @@ class LlauSysHomeTests(TestCase):
 class LlauSysServicesTests(TestCase):
     def setUp(self):
         self.response = self.client.get("/services", follow=True)
+        self.content = self.response.content.decode("utf-8")
 
     def test_url_regex(self):
         """Also responds to service/"""
@@ -31,8 +32,10 @@ class LlauSysServicesTests(TestCase):
     def test_services_content(self):
         """Check that all menu options exist"""
         self.assertEquals(200, self.response.status_code)
-        content = self.response.content.decode("utf-8")
-        self.assertIn("Services", content)
+        self.assertIn("Services", self.content)
+
+    def test_context(self):
+        self.assertIn('Services', self.response.context['title'])
 
 
 class LlauSysProjectsTests(TestCase):
