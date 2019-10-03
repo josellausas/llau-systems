@@ -17,10 +17,6 @@ def services(request):
     return render(request, 'services.html', context)
 
 
-def about(request):
-    return render(request, 'about.html', {'title': 'LlauSys | About'})
-
-
 def projects(request):
     return render(request, 'projects.html', {'title': 'LlauSys | Projects'})
 
