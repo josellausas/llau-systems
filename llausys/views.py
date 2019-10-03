@@ -1,4 +1,6 @@
+from django.http import HttpResponse
 from django.shortcuts import render
+from django.template.loader import get_template
 
 
 def home(request):
@@ -28,7 +30,11 @@ def techs(request):
 
 
 def blog(request):
-    return render(request, 'blog.html', {'title': 'LlauSys | Blog'})
+    template_obj = get_template('blog.html')
+    context = {
+        'title': 'LlauSys | Blog'
+    }
+    return HttpResponse(template_obj.render(context))
 
 
 def contact(request):
