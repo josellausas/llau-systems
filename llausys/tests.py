@@ -23,6 +23,11 @@ class LlauSysServicesTests(TestCase):
     def setUp(self):
         self.response = self.client.get("/services", follow=True)
 
+    def test_url_regex(self):
+        """Also responds to service/"""
+        response = self.client.get("/service", follow=True)
+        self.assertEquals(200, response.status_code)
+
     def test_services_content(self):
         """Check that all menu options exist"""
         self.assertEquals(200, self.response.status_code)
@@ -33,6 +38,11 @@ class LlauSysServicesTests(TestCase):
 class LlauSysProjectsTests(TestCase):
     def setUp(self):
         self.response = self.client.get("/projects", follow=True)
+
+    def test_url_regex(self):
+        """Also responds to project/"""
+        response = self.client.get("/project", follow=True)
+        self.assertEquals(200, response.status_code)
 
     def test_projects_content(self):
         """Check that all menu options exist"""
