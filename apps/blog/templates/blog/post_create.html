@@ -5,7 +5,7 @@
   <section class="section">
     <form method='POST' action='.'> {% csrf_token %}
       {{ form.as_p }}
-      <button type="submit">Send</button>
+      <button class="button" type="submit">Send</button>
     </form>
   </section>
 {% endblock content %}
