@@ -35,7 +35,7 @@ def blog_post_update(request, slug):
         'title': obj.title,
         'obj': obj
     }
-    return render(request, 'blog/post_detail.html', context)
+    return render(request, 'blog/post_update.html', context)
 
 
 def blog_post_remove(request, slug):
