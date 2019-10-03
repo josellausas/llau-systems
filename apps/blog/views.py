@@ -1,3 +1,4 @@
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, get_object_or_404
 from django.utils.text import slugify
 
@@ -26,6 +27,7 @@ def blog_post_detail(request, slug):
     return render(request, "blog/post_detail.html", context)
 
 
+@login_required
 def blog_post_create(request):
     form = BlogPostModelForm(request.POST or None)
     if form.is_valid():
