@@ -7,7 +7,12 @@
   <title>{{title|default:"LlauSys"}}</title>
 </head>
 <body>
-  {% if user.is_authenticated %}
+  {% if debug %}
+      <pre>
+        {{request.path}}
+        {{request.COOKIES}}
+      </pre>
+  {% elif user.is_authenticated %}
     <div style="background-color: green;">&nbsp;</div>
   {% else %}
     <div style="background-color: gray;"></div>
