@@ -2,8 +2,6 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from django.template.loader import get_template
 
-from apps.blog.views import blog_post_detail_page
-
 
 def home(request):
     context = {

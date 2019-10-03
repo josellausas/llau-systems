@@ -17,3 +17,4 @@ class BlogPost(models.Model):
     updated = models.DateTimeField(auto_now=True)
     view_count = models.PositiveIntegerField(default=0)
     slug = models.SlugField(unique=True)
+    is_published = models.BooleanField(default=False)
