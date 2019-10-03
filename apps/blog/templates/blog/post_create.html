@@ -1,13 +1,11 @@
-{% extends "base.html" %}
+{% extends 'base.html' %}
 
 {% block content %}
-<h2 class="title">{{obj.title}}</h2>
-<section class="section">
-  <div>
-    Views: {{obj.view_count}}
-  </div>
-  <div>
-  {{obj.content}}
-  </div>
-</section>
-{% endblock %}
+  <h2 class="title">Create Post</h2>
+  <section class="section">
+    <form method='POST' action='.'> {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit">Send</button>
+    </form>
+  </section>
+{% endblock content %}

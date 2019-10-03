@@ -2,6 +2,8 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from django.template.loader import get_template
 
+from .forms import ContactForm
+
 
 def home(request):
     context = {
@@ -31,4 +33,15 @@ def techs(request):
 
 
 def contact(request):
-    return render(request, 'contact.html', {'title': 'LlauSys | Contact'})
+    form = ContactForm(request.POST or None)
+    if form.is_valid():
+        data = form.changed_data
+        # TODO: Send slack message
+        # TODO: Create its own model
+        form = ContactForm()
+
+    context = {
+        'title': 'LlauSys | Contact',
+        'form': form
+    }
+    return render(request, 'contact.html', context)

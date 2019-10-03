@@ -1,6 +1,8 @@
 from django.shortcuts import render, get_object_or_404
+from django.utils.text import slugify
 
 from .models import BlogPost
+from .forms import BlogPostModelForm
 
 
 def blog_home(request):
@@ -25,7 +27,18 @@ def blog_post_detail(request, slug):
 
 
 def blog_post_create(request):
-    return render(request, 'blog/post_create.html', {'form': None})
+    form = BlogPostModelForm(request.POST or None)
+    if form.is_valid():
+        form.save()
+        # post = form.cleaned_data
+        # post.slug = slugify(post.title)
+        # obj = BlogPost.objects.create(**post)
+        form = BlogPostModelForm()
+    context = {
+        'form': form,
+        'title': "Create Post"
+    }
+    return render(request, 'blog/post_create.html', context)
 
 
 def blog_post_update(request, slug):

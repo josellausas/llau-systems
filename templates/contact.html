@@ -4,8 +4,7 @@
   <h2 class="title">Contact</h2>
   <section class="section">
     <form method='POST' action='.'> {% csrf_token %}
-      <input type="text" name="email">
-      <textarea name="content"></textarea>
+      {{ form.as_p }}
       <button type="submit">Send</button>
     </form>
   </section>
