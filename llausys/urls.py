@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, re_path
 from . import views
+from apps.blog.views import blog_post_detail_page, blog_home
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -25,5 +26,6 @@ urlpatterns = [
     re_path(r'^projects?/$', views.projects),
     path('tech/', views.techs),
     path('contact/', views.contact),
-    path('blog/', views.blog),
+    path('blog/', blog_home),
+    path('post/<str:slug>/', blog_post_detail_page),
 ]
