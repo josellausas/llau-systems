@@ -3,6 +3,11 @@
 {% block content %}
 <h2 class="title">{{obj.title}}</h2>
 <section class="section">
+  <div>
+    Views: {{obj.view_count}}
+  </div>
+  <div>
   {{obj.content}}
+  </div>
 </section>
 {% endblock %}

@@ -4,7 +4,7 @@ from .models import BlogPost
 
 
 def blog_home(request):
-    object_list = BlogPost.objects.all()
+    object_list = BlogPost.objects.filter(is_published=True)
     context = {
         'title': "Blog | LlauSys",
         'object_list': object_list,
@@ -14,8 +14,29 @@ def blog_home(request):
 
 
 def blog_post_detail(request, slug):
+    obj = get_object_or_404(BlogPost, slug=slug)
+    obj.view_count = obj.view_count + 1
+    obj.save()
     context = {
         'title': 'Blog | LlauSys',
-        'obj': get_object_or_404(BlogPost, slug=slug)
+        'obj': obj
     }
     return render(request, "blog/post_detail.html", context)
+
+
+def blog_post_create(request):
+    return render(request, 'blog/post_create.html', {'form': None})
+
+
+def blog_post_update(request, slug):
+    obj = get_object_or_404(BlogPost, slug=slug)
+    # TODO: Make changes to object here
+    context = {
+        'title': obj.title,
+        'obj': obj
+    }
+    return render(request, 'blog/post_detail.html', context)
+
+
+def blog_post_remove(request, slug):
+    return render(request, "blog/index.html", {})
