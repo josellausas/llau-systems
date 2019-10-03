@@ -2,3 +2,7 @@
   background-color: tomato;
   padding: 4px;
 }
+
+.bottom-pad {
+  padding-bottom: 1em;
+}

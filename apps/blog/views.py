@@ -29,10 +29,10 @@ def blog_post_detail(request, slug):
 def blog_post_create(request):
     form = BlogPostModelForm(request.POST or None)
     if form.is_valid():
-        form.save()
-        # post = form.cleaned_data
-        # post.slug = slugify(post.title)
-        # obj = BlogPost.objects.create(**post)
+        post = form.save(commit=False)
+        post.slug = slugify(post.title)
+        post.created_by = request.user
+        post.save()
         form = BlogPostModelForm()
     context = {
         'form': form,
