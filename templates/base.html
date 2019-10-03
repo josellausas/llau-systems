@@ -1,17 +1,20 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css">
+  <link rel="stylesheet" href="{% static 'css/main.css' %}">
   <title>{{title|default:"LlauSys"}}</title>
 </head>
 <body>
   {% if debug %}
-      <pre>
-        {{request.path}}
-        {{request.COOKIES}}
-      </pre>
+    <div id='debug-pannel'>
+      <div class="container">
+        Debug path: {{request.path}}
+      </div>
+    </div>
   {% elif user.is_authenticated %}
     <div style="background-color: green;">&nbsp;</div>
   {% else %}
