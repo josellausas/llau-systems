@@ -34,7 +34,8 @@ def blog(request):
     context = {
         'title': 'LlauSys | Blog'
     }
-    return HttpResponse(template_obj.render(context))
+    render_item = template_obj.render(context)
+    return HttpResponse(render_item)
 
 
 def contact(request):
