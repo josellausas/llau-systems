@@ -1,5 +1,6 @@
 from django.test import (TestCase, Client)
 
+
 class LlauSysHomeTests(TestCase):
     def setUp(self):
         self.response = self.client.get("/")
@@ -39,6 +40,7 @@ class LlauSysProjectsTests(TestCase):
         content = self.response.content.decode("utf-8")
         self.assertIn("Projects</h2>", content)
 
+
 class LlauSysTechnologiesTests(TestCase):
     def setUp(self):
         self.response = self.client.get("/tech", follow=True)
@@ -51,6 +53,7 @@ class LlauSysTechnologiesTests(TestCase):
         content = self.response.content.decode("utf-8")
         self.assertIn("Technologies</h2>", content)
 
+
 class LlauSysBlogTests(TestCase):
     def setUp(self):
         self.response = self.client.get("/blog", follow=True)
@@ -62,6 +65,7 @@ class LlauSysBlogTests(TestCase):
         self.assertEquals(200, self.response.status_code)
         content = self.response.content.decode("utf-8")
         self.assertIn("Blog</h2>", content)
+
 
 class LlauSysContactTests(TestCase):
     def setUp(self):
