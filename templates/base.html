@@ -71,6 +71,30 @@
       {% endblock content %}
     </div>
   </section>
+  <script>
+    /*window.onerror = function(msg, url, line, col, err){
+      // Global error handler
+    }*/
+    // Wait for the DOM to load:
+    const showLoading = (showBool) => {
+      // Do something.//
+      console.log("Loading...");
+    }
+    showLoading(true);
+    document.addEventListener('DOMContentLoaded', function() {
+      // Loading finished
+      showLoading(false);
+      // Catch errors for a single component
+      /*const img = document.getElementById('badImg');
+      img.onerror = function() {
+        console.warn('image did not load');
+      }*/
+    });
+    window.addEventListener('error', function(errorEvent){
+      console.log()
+      errorEvent.preventDefault(); // Will no longer show any errors on the browser console
+    });
+  </script>
 </body>
 </html>
 
