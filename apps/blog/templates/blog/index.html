@@ -2,6 +2,7 @@
 
 {% block content %}
   {% if user.is_authenticated %}
+  <hr/>
   <div class="bottom-pad">
     <a class="button" href="/blog-new">New Post</a>
   </div>
@@ -12,11 +13,16 @@
       No Blog Posts
       </div>
     {% else %}
+      <b>Latest:</b><br/>
       {% for object in object_list %}
-      <div>
-        <a href="{{obj.get_absolute_url}}">
-        <p>{{object.title}}</p>
+      <div class="box">
+        <a href="{{ object.get_absolute_url }}">
+          <p class="title">{{object.title}}</p>
         </a>
+        <br/>
+        <div class="content">
+        {{object.content}}
+        </div>
       </div>
       {% endfor %}
     {% endif %}

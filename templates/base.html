@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css">
   <link rel="stylesheet" href="{% static 'css/main.css' %}">
 </head>
-<body>
+<body class="main">
   {% include "navbar.html" %}
   {% include "debug.html" %}
   <section class="section">
@@ -19,7 +19,7 @@
       <h1 class="title">{{title|default:"Llau Systems"}}</h1>
       <p class="subtitle">{{subtitle}}</p>
     </div>
-  </section>
+  
   <div class="container animated fadeIn">
     {% block content %}
     <h2 class="title">Contact</h2>
@@ -27,7 +27,10 @@
       <p class="content animated infinite bounce delay-2s">Coming soon...</p>
     </section>
     {% endblock content %}
+    
   </div>
+  </section>
+  {% include "footer.html"%}
   <script>
     /*window.onerror = function(msg, url, line, col, err){
       // Global error handler

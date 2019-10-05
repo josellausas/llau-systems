@@ -27,7 +27,7 @@ def blog_post_detail(request, slug):
             obj.view_count = obj.view_count + 1
         obj.save()
         context = {
-            'title': 'Blog | LlauSys',
+            'title': obj.title,
             'obj': obj
         }
         return render(request, "blog/post_detail.html", context)

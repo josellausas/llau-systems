@@ -1,7 +1,6 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h2 class="title">{{obj.title}}</h2>
 <section class="section">
   <div>
     {% if not obj.is_published %}
@@ -9,8 +8,10 @@
     {% endif %}
     Views: {{obj.view_count}}
   </div>
-  <div>
-  {{obj.content}}
-  </div>
+  <section class="section">
+    <div class="content">
+    {{obj.content}}
+    </div>
+  </section>
 </section>
 {% endblock %}
