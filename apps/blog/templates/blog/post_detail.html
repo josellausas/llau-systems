@@ -4,6 +4,9 @@
 <h2 class="title">{{obj.title}}</h2>
 <section class="section">
   <div>
+    {% if not obj.is_published %}
+    <b>(Unpublished)</b><br/>
+    {% endif %}
     Views: {{obj.view_count}}
   </div>
   <div>

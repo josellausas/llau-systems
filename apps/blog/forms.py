@@ -13,3 +13,8 @@ class BlogPostModelForm(forms.ModelForm):
     class Meta:
         model = BlogPost
         fields = ['title', 'content', 'is_published']
+
+    # def clean_title(self, *args, **kwawgs):
+    #     instance = self.instance
+    #     if instance is not None:
+    #         pass
