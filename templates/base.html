@@ -12,55 +12,12 @@
   <link rel="stylesheet" href="{% static 'css/main.css' %}">
 </head>
 <body>
-  {% if debug %}
-    <div id='debug-pannel'>
-      <div class="container">
-        Debug path: {{request.path}}
-      </div>
-    </div>
-  {% elif user.is_authenticated %}
-    <div style="background-color: green;">&nbsp;</div>
-  {% else %}
-    <div style="background-color: gray;"></div>
-  {% endif %}
+  {% include "debug.html" %}
+  {% include "navbar.html" %}
   <section class="section">
     <div class="container animated bounceInRight">
       <h1 class="title">Llau Systems</h1>
       <p class="subtitle">Professional Services</p>
-    </div>
-    <div class="container">
-      <div class="columns animated slideInDown" style="padding-top:42px">
-        <div class="column hvr-underline-from-center">
-          <a href="/">
-            <div>Home</div>
-          </a>
-        </div>
-        <div class="column hvr-underline-from-center">
-          <a href="/services">
-            <div>Services</div>
-          </a>
-        </div>
-        <div class="column hvr-underline-from-center">
-          <a href="/projects">
-            <div>Projects</div>
-          </a>
-        </div>
-        <div class="column hvr-underline-from-center">
-          <a href="/tech">
-            <div>Technologies</div>
-          </a>
-        </div>
-        <div class="column hvr-underline-from-center">
-          <a href="/blog">
-            <div>Blog</div>
-          </a>
-        </div>
-        <div class="column hvr-underline-from-center">
-          <a href="/contact">
-            <div>Contact</div>
-          </a>
-        </div>
-      </div>
     </div>
   </section>
   <section class="section">

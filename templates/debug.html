@@ -1,0 +1,12 @@
+{% if debug %}
+  <div id='debug-pannel'>
+    <div class="container">
+      <b>Developer mode</b>
+      <p>{{request.user}}@{{request.META.HTTP_HOST}}{{request.path}}</p>
+    </div>
+  </div>
+{% elif user.is_authenticated %}
+  <div style="background-color: green;">&nbsp;</div>
+{% else %}
+  <div style="background-color: gray;"></div>
+{% endif %}
