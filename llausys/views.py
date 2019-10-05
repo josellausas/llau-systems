@@ -24,12 +24,10 @@ def projects(request):
 
 
 def techs(request):
-    template_obj = get_template('techs.html')
     context = {
         'title': 'LlauSys | Technologies'
     }
-    render_item = template_obj.render(context)
-    return HttpResponse(render_item)
+    return render(request, 'techs.html', context)
 
 
 def contact(request):
