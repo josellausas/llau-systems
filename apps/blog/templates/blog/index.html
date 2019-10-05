@@ -16,7 +16,7 @@
     {% else %}
       {% for object in object_list %}
       <div>
-        <a href="/blog/{{object.slug}}">
+        <a href="{{obj.get_absolute_url}}">
         <p>{{object.title}}</p>
         </a>
       </div>

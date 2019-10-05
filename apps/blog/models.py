@@ -19,3 +19,9 @@ class BlogPost(models.Model):
     view_count = models.PositiveIntegerField(default=0)
     slug = models.SlugField(unique=True)
     is_published = models.BooleanField(default=False)
+
+    def get_absolute_url(self):
+        return f"/blog/{self.slug}"
+
+    def get_edit_url(self):
+        return f"/blog/{self.slug}/edit"
