@@ -7,25 +7,29 @@ from .forms import ContactForm
 
 def home(request):
     context = {
-        'title': 'LlauSys'
+        'title': 'LlauSys',
+        'subtitle': 'Professional Services'
     }
     return render(request, 'index.html', context)
 
 
 def services(request):
     context = {
-        'title': 'Services'
+        'title': 'Services',
+        'subtitle': 'Our services'
     }
     return render(request, 'services.html', context)
 
 
 def projects(request):
-    return render(request, 'projects.html', {'title': 'LlauSys | Projects'})
+    context = {'title': 'Our Projects', 'subtitle': 'Check out our work'}
+    return render(request, 'projects.html', context)
 
 
 def techs(request):
     context = {
-        'title': 'LlauSys | Technologies'
+        'title': 'Technologies',
+        'subtitle': 'We work with the latest tools'
     }
     return render(request, 'techs.html', context)
 
@@ -39,7 +43,8 @@ def contact(request):
         form = ContactForm()
 
     context = {
-        'title': 'LlauSys | Contact',
+        'title': 'Contact',
+        'subtitle': 'Leave us a message!',
         'form': form
     }
     return render(request, 'contact.html', context)

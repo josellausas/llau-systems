@@ -10,7 +10,8 @@ from .forms import BlogPostModelForm
 def blog_home(request):
     object_list = BlogPost.objects.filter(is_published=True)
     context = {
-        'title': "Blog | LlauSys",
+        'title': "Blog",
+        'subtitle': 'Latest posts',
         'object_list': object_list,
         'count': object_list.count()
     }
