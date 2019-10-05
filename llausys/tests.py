@@ -51,7 +51,7 @@ class LlauSysProjectsTests(TestCase):
         """Check that all menu options exist"""
         self.assertEquals(200, self.response.status_code)
         content = self.response.content.decode("utf-8")
-        self.assertIn("Projects</h2>", content)
+        self.assertIn("Projects", content)
 
     def test_context(self):
         self.assertIn('Projects', self.response.context['title'])
@@ -67,7 +67,7 @@ class LlauSysTechnologiesTests(TestCase):
         # self.assertEqual(len(response.context['customers']), 5)
         self.assertEquals(200, self.response.status_code)
         content = self.response.content.decode("utf-8")
-        self.assertIn("Technologies</h2>", content)
+        self.assertIn("Technologies", content)
 
     def test_context(self):
         self.assertIn('Technologies', self.response.context['title'])
@@ -83,7 +83,7 @@ class LlauSysBlogTests(TestCase):
         # self.assertEqual(len(response.context['customers']), 5)
         self.assertEquals(200, self.response.status_code)
         content = self.response.content.decode("utf-8")
-        self.assertIn("Blog</h2>", content)
+        self.assertIn("Blog", content)
 
     def test_context(self):
         self.assertIn('Blog', self.response.context['title'])
@@ -99,7 +99,7 @@ class LlauSysContactTests(TestCase):
         # self.assertEqual(len(response.context['customers']), 5)
         self.assertEquals(200, self.response.status_code)
         content = self.response.content.decode("utf-8")
-        self.assertIn("Contact</h2>", content)
+        self.assertIn("Contact", content)
 
     def test_context(self):
         self.assertIn('Contact', self.response.context['title'])
