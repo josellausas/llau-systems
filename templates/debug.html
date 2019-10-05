@@ -1,8 +1,7 @@
 {% if debug %}
   <div id='debug-pannel'>
     <div class="container">
-      <b>Developer mode</b>
-      <p>{{request.user}}@{{request.META.HTTP_HOST}}{{request.path}}</p>
+      <b>Developer mode:</b> {{request.user}}@{{request.META.HTTP_HOST}}{{request.path}}
     </div>
   </div>
 {% elif user.is_authenticated %}
