@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
-  {% if user.is_authenticated %}
+  {% if user.is_staff %}
   <hr/>
   <div class="bottom-pad">
     <a class="button" href="/blog-new">New Post</a>

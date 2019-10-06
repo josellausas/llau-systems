@@ -31,11 +31,13 @@ def blog_post_detail(request, slug):
             'obj': obj
         }
         return render(request, "blog/post_detail.html", context)
-    return HttpResponseNotFound("Not Found")
+    return redirect("/blog")
 
 
 @login_required
 def blog_post_create(request):
+    if not request.user.is_staff:
+        return redirect("/blog")
     form = BlogPostModelForm(request.POST or None)
     if form.is_valid():
         post = form.save(commit=False)
@@ -55,6 +57,8 @@ def blog_post_create(request):
 @login_required
 def blog_post_update(request, slug):
     obj = get_object_or_404(BlogPost, slug=slug)
+    if not request.user.is_staff:
+        return redirect(f"/blog/{obj.slug}")
     form = BlogPostModelForm(request.POST or None, instance=obj)
 
     if form.is_valid():

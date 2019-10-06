@@ -35,7 +35,7 @@ def signup_view(request):
         )
         new_user = authenticate(username=user.username, password=password)
         login(request, new_user)
-        return redirect("profile")
+        return redirect("/profile")
     context = {
         "title": "Sign Up",
         "form": form
@@ -66,7 +66,7 @@ def login_view(request):
             # This logins a user with valid creds
             login(request, user)
             if request.user.is_authenticated:
-                return redirect('dashboard')
+                return redirect('/dashboard')
             
     else:
         # TODO: Log bad attempt here
