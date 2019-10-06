@@ -1,0 +1,11 @@
+{
+  "name": "llau-systems",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/zunware/llau-systems",
+  "author": "zunware <jose@josellausas.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "cypress": "^3.4.1"
+  }
+}

@@ -7,3 +7,11 @@
 1. Create a virtualenv at `env/` and activate
 2. Install deps with `pip install -r requirements.txt`
 3. Run server with `manage.py runserver`
+
+## Run Tests
+
+`./manage.py test`
+
+## Run Cypress Tests
+1. Install cypress with `yarn install`
+2. Run Cypress : `yarn run cypress open`
