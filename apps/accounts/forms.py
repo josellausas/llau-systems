@@ -21,3 +21,14 @@ class UserLoginForm(forms.Form):
                 raise forms.ValidationError("Login Error")
         # Continue as normal
         return super(UserLoginForm, self).clean(*args, **kwargs)
+
+
+
+class UserRegisterForm(forms.ModelForm):
+    class Meta:
+        model = User
+        fields = [
+            'username',
+            'email',
+            'password'
+        ]

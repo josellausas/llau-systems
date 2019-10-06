@@ -2,11 +2,15 @@ from django.contrib.auth import authenticate, get_user_model, login, logout
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 
-from .forms import UserLoginForm
+from .forms import UserLoginForm, UserRegisterForm
 
 
 def signup_view(request):
-    context = {}
+    form = UserRegisterForm(request.POST or None)
+    context = {
+        "title": "Sign Up",
+        "form": form
+    }
     return render(request, 'accounts/signup.html', context)
 
 
