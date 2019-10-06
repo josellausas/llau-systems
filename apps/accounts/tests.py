@@ -9,7 +9,7 @@ class TestLogin(TestCase):
         self.response = self.client.get("/signup", follow=True)
         self.assertEquals(200, self.response.status_code)
         content = self.response.content.decode("utf-8")
-        self.assertIn("Signup", content)
+        self.assertIn("Sign Up", content)
 
     def test_login_endpoint(self):
         """Check login endpoint"""
