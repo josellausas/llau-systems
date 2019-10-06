@@ -23,10 +23,12 @@ def login_view(request):
         password = form.cleaned_data.get('password')
         # This only checks for valid creds
         user = authenticate(username=username, password=password)
+        form = UserLoginForm()
         if user:
             # This logins a user with valid creds
             login(request, user)
-            print(request.user.is_authenticated)
+            if request.user.is_authenticated:
+                return redirect('dashboard')
             
     else:
         # TODO: Log bad attempt here
@@ -42,8 +44,8 @@ def login_view(request):
 
 @login_required
 def logout_view(request):
-    context = {}
-    return render(request, 'accounts/logout.html', context)
+    logout(request)
+    return redirect("/")
 
 
 @login_required
