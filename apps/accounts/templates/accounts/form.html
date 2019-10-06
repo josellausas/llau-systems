@@ -7,6 +7,10 @@
     action=''
     enctype='multipart/form-data'>{% csrf_token %}
     {{ form }}
+    <label class="honeybunny" for="name"></label>
+    <input class="honeybunny" autocomplete="off" type="text" id="name" name="name" placeholder="Your name here">
+    <label class="honeybunny" for="email"></label>
+    <input class="honeybunny" autocomplete="off" type="email" id="email3" name="email" placeholder="Your e-mail here">
     <input type='submit' class='btn btn-default' value='Log In' />
   </form>
 </section>

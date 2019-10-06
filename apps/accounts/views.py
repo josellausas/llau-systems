@@ -6,6 +6,10 @@ from .forms import UserLoginForm, UserRegisterForm
 
 
 def signup_view(request):
+    if request.POST:
+        if request.POST['name'] or request.POST['email3']:
+            # Its a trap! TODO: Log bot spam attempt!
+            return redirect("/")
     form = UserRegisterForm(request.POST or None)
     if form.is_valid():
         user = form.save(commit=False)
@@ -26,6 +30,11 @@ def login_view(request):
     if request.user.is_authenticated:
         print("redirecting")
         return redirect("/profile")
+
+    if request.POST:
+        if request.POST['name'] or request.POST['email3']:
+            # Its a trap! TODO: Log bot spam attempt!
+            return redirect("/")
 
     # TODO: Log login view
     form = UserLoginForm(request.POST or None)
