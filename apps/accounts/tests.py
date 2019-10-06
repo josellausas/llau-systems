@@ -6,7 +6,7 @@ class TestLogin(TestCase):
 
     def test_login_endpoint(self):
         """Check login endpoint"""
-        self.response = self.client.get("/login")
+        self.response = self.client.get("/login", follow=True)
         self.assertEquals(200, self.response.status_code)
         content = self.response.content.decode("utf-8")
         self.assertIn("Login", content)
