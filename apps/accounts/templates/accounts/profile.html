@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div>
+Hello {{request.user.username}}
+</div>
+<section class="section">
+  <a class="button is-primary" href="{% url 'logout' %}">
+    <strong>Log out</strong>
+  </a>
+</section>
+{% endblock content %}
