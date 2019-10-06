@@ -1,14 +1,25 @@
 from django.contrib.auth import authenticate, get_user_model, login, logout
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
+from django.conf import settings
+
+import slack
 
 from .forms import UserLoginForm, UserRegisterForm
 
 
 def signup_view(request):
+    # Notify via Slack
     if request.POST:
-        if request.POST['name'] or request.POST['email3']:
+        honey_name = request.POST.get('name', False)
+        honey_email = request.POST.get('email3', False)
+        if honey_name or honey_email:
             # Its a trap! TODO: Log bot spam attempt!
+            client = slack.WebClient(token=settings.SLACK_TOKEN)
+            client.chat_postMessage(
+                channel='#llau-systems',
+                text=f"Spam attempt: {honey_name} - {honey_email}"
+            )
             return redirect("/")
     form = UserRegisterForm(request.POST or None)
     if form.is_valid():
@@ -16,6 +27,12 @@ def signup_view(request):
         password = form.cleaned_data.get("password")
         user.set_password(password)
         user.save()
+        print("Saved user")
+        client = slack.WebClient(token=settings.SLACK_TOKEN)
+        client.chat_postMessage(
+            channel='#llau-systems',
+            text=f"New User: {user.username} - {user.email}"
+        )
         new_user = authenticate(username=user.username, password=password)
         login(request, new_user)
         return redirect("profile")

@@ -131,3 +131,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
+
+# Slack integration
+SLACK_TOKEN = env('SLACK_TOKEN')
+SLACK_AS_USER = True
