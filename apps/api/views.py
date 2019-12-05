@@ -13,6 +13,7 @@ def api_test(request):
     obj, created = MobileApp.objects.get_or_create(
         name="Test", slug="test",
     )
+    print(request.content_type)
     if request.method == "POST":
         print (request)
         obj.view_count = obj.view_count + 1
