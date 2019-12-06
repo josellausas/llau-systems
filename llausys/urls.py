@@ -15,7 +15,7 @@ urlpatterns = [
     path('logout/', logout_view, name='logout'),
     path('signup/', signup_view, name='signup'),
     path('profile/', my_profile_view, name='profile'),
-    path('dashboard/', include('apps.api.urls', namespace='dashboard')),
+    path('dashboard/', include('apps.dashboard.urls', namespace='dashboard')),
     path('blog/', include('apps.blog.urls', namespace='blog')),
     path('blog-new/', blog_post_create),
     re_path(r'^services?/$', views.services),

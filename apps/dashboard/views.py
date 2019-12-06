@@ -1,3 +1,8 @@
 from django.shortcuts import render
 
-# Create your views here.
+def dashboard_home(request):
+    context = {
+        'title': "Dashboard",
+        'subtitle': 'Hello Dashboard',
+    }
+    return render(request, "dashboard/index.html", context)

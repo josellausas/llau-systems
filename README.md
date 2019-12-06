@@ -15,3 +15,6 @@
 ## Run Cypress Tests
 1. Install cypress with `yarn install`
 2. Run Cypress : `yarn run cypress open`
+
+# Resources
+- https://github.com/BulmaTemplates/bulma-templates/blob/master/templates/hero.html
