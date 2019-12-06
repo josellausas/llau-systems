@@ -17,14 +17,14 @@
       <a class="navbar-item" href="/">
         Home
       </a>
-      <a class="navbar-item" href="/blog">
+      {% comment %} <a class="navbar-item" href="/blog">
         Blog
-      </a>
+      </a> {% endcomment %}
       <div class="navbar-item has-dropdown is-hoverable">
         <a class="navbar-link" href="/services">
           Services
         </a>
-        <div class="navbar-dropdown">
+        {% comment %} <div class="navbar-dropdown">
           <a class="navbar-item">
             About
           </a>
@@ -34,10 +34,10 @@
           <a class="navbar-item">
             Contact
           </a>
-        </div>
+        </div> {% endcomment %}
       </div>
       
-      <div class="navbar-item has-dropdown is-hoverable">
+      {% comment %} <div class="navbar-item has-dropdown is-hoverable">
         <a class="navbar-link" href="/tech">
           Technologies
         </a>
@@ -57,7 +57,7 @@
             Report an issue
           </a>
         </div>
-      </div>
+      </div> {% endcomment %}
       <a class="navbar-item" href="/projects">
         Projects
       </a>
