@@ -10,7 +10,7 @@ def home(request):
         'title': 'LlauSys',
         'subtitle': 'Professional Services'
     }
-    return render(request, 'index.html', context)
+    return render(request, 'main.html', context)
 
 
 def services(request):
