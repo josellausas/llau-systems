@@ -18,3 +18,10 @@
 
 # Resources
 - https://github.com/BulmaTemplates/bulma-templates/blob/master/templates/hero.html
+- https://bulmastyle.com
+- https://bulma.style/film/dist/
+- https://cssninjastudio.github.io.
+- https://bulmatemplates.github.io/bulma-templates/templates/showcase.html
+- https://bulmatemplates.github.io/bulma-templates/templates/personal.html
+- https://bulmathemes.com
+- https://github.com/cssninjaStudio/fresh
