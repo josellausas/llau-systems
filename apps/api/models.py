@@ -1,6 +1,7 @@
 from django.db import models
 from django.conf import settings
 from django.contrib.auth import get_user_model
+from django.urls import reverse
 
 User = settings.AUTH_USER_MODEL
 
@@ -14,6 +15,10 @@ class MobileApp(models.Model):
 
     def __str__(self):
         return self.name
+
+    def get_absolute_url(self):
+        return reverse("api:app-detail", kwargs={"slug": self.slug})
+    
 
 class UserGame(models.Model):
     created = models.DateTimeField(auto_now_add=True)

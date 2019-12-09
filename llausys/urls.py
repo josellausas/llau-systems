@@ -23,6 +23,6 @@ urlpatterns = [
     re_path(r'^projects?/$', views.projects),
     path('tech/', views.techs),
     path('contact/', views.contact),
-    path('api/v1/', include('apps.api.urls', namespace='apiv1')),
-    re_path(r'^api-auth/', include('rest_framework.urls')),
+    path('api/v1/', include('apps.api.urls', namespace='api')),
+    re_path(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
 ]
