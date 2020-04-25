@@ -14,8 +14,8 @@ class LlauSysHomeTests(TestCase):
         self.assertIn("Home", content)
         self.assertIn("Services", content)
         self.assertIn("Projects", content)
-        self.assertIn("Technologies", content)
-        self.assertIn("Blog", content)
+        self.assertIn("Technology", content)
+        self.assertIn("Services", content)
         self.assertIn("Contact", content)
 
 
