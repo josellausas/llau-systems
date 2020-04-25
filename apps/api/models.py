@@ -18,6 +18,9 @@ class MobileApp(models.Model):
 
     def get_absolute_url(self):
         return reverse("api:app-detail", kwargs={"slug": self.slug})
+
+    class Meta:
+        ordering = ['slug']
     
 
 class UserGame(models.Model):
@@ -32,6 +35,9 @@ class UserGame(models.Model):
     def __str__(self):
         return f"{game}:{user}"
 
+    class Meta:
+        ordering = ['created']
+
 
 class Score(models.Model):
     score = models.IntegerField(blank=False, default=0, null=False)
@@ -41,3 +47,6 @@ class Score(models.Model):
 
     def __str__(self):
         return f"({self.app}){self.user}: {self.score}"
+    
+    class Meta:
+        ordering = ['created']

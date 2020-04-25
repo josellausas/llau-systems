@@ -29,11 +29,11 @@ class GroupViewSet(viewsets.ModelViewSet):
     queryset = models.Group.objects.all()
     serializer_class = GroupSerializer
 
-class AppSerializer(serializers.ModelSerializer):
+class AppSerializer(serializers.Serializer):
     # url = serializers.HyperlinkedIdentityField(view_name="api:app-detail", lookup_field='slug')
-    class Meta:
-        model = MobileApp
-        fields = ['slug', 'name', 'view_count']
+    id = serializers.IntegerField(read_only=True)
+    name = serializers.CharField(required=True, allow_blank=False, max_length=100)
+    
 
 
 class AppViewSet(viewsets.ReadOnlyModelViewSet):
