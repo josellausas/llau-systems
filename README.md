@@ -25,3 +25,10 @@
 - https://bulmatemplates.github.io/bulma-templates/templates/personal.html
 - https://bulmathemes.com
 - https://github.com/cssninjaStudio/fresh
+
+# Kubernetes
+
+Run in Kubernetes
+`kubectl run llausys-web --env="DB_PASSWORD=''" --env="DB_HOST=localhost" --image=zunware/llau-systems-web:latest --port 8000`
+
+`k apply -f postgres-deployment.yml && k apply -f django-deployment.yml`

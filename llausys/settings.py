@@ -19,18 +19,11 @@ SECRET_KEY = env('SECRET_KEY')
 DEBUG = env('DEBUG')
 
 ALLOWED_HOSTS = [
-    'llau.systems',
-    'www.llau.systems',
-    'test.llau.systems',
-    'llausys.herokuapp.com',
-    'llau-systems-test.herokuapp.com',
-    'localhost',
-    '192.168.1.181',
+    '*',
 ]
 
 INTERNAL_IPS = (
-    '127.0.0.1',
-    '192.168.1.181',
+    '*',
 )
 
 LOGIN_URL = '/login/'

@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: llausys-web
+spec:
+  selector:
+    matchLabels:
+      app: llausys-web
+  template:
+    metadata:
+      labels:
+        app: llausys-web
+    spec:
+      containers:
+      - name: llausys-web
+        image: zunware/llau-systems-web
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 8000
+        env:
+        - name: DB_PASSWORD
+          value: test1234
+        - name: DB_HOST
+          value: postgis
+        - name: DB_PORT
+          value: "5432"
+        - name: DB_USER
+          value: llau
+        - name: DB_NAME
+          value: llau
