@@ -17,13 +17,14 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 SECRET_KEY = env('SECRET_KEY')
 DEBUG = env('DEBUG')
+HOST = env('ALLOWED_HOST')
 
 ALLOWED_HOSTS = [
-    '*',
+    HOST
 ]
 
 INTERNAL_IPS = (
-    '*',
+    '*'
 )
 
 LOGIN_URL = '/login/'
