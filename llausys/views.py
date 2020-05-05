@@ -1,6 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.template.loader import get_template
+from django.conf import settings
 
 from .forms import ContactForm
 
@@ -48,3 +49,7 @@ def contact(request):
         'form': form
     }
     return render(request, 'contact.html', context)
+
+
+def acme_challenge(request):
+    return HttpResponse(settings.WELL_KNOWN_KEY)
