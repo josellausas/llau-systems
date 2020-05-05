@@ -1,7 +1,8 @@
 #/usr/bin/env bash
 curl -sL https://sentry.io/get-cli/ | bash
-export VERSION=$(sentry-cli releases propose-version)
-./set_version.sh && \
+VERSION=$(sentry-cli releases propose-version)
+sentry-cli releases new -p llau-systems-web $VERSION
+sentry-cli releases set-commits --auto $VERSION
 ./test.sh && \
 docker build -t zunware/llau-systems-web . && \
 ./push.sh
