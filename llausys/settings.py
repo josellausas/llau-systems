@@ -24,7 +24,7 @@ DEBUG = env('DEBUG')
 HOST = env('ALLOWED_HOST')
 WELL_KNOWN_KEY = env('WELL_KNOWN_KEY')
 SENTRY_DSN = env('SENTRY_DSN', default='')
-VERSION = env('VERSION', default='dev')
+VERSION = env('VERSION', default='llausys-web@dev')
 
 sentry_sdk.init(
     dsn=SENTRY_DSN,
