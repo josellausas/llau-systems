@@ -8,9 +8,6 @@ from apps.accounts.views import (
     login_view, logout_view, signup_view, my_profile_view
 )
 
-def trigger_error(request):
-    division_by_zero = 1 / 0
-
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home),
@@ -28,5 +25,4 @@ urlpatterns = [
     path('contact/', views.contact),
     path('api/v1/', include('apps.api.urls', namespace='api')),
     re_path(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
-    path('test-sentry/', trigger_error),
 ]
