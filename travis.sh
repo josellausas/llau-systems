@@ -2,7 +2,7 @@
 curl -sL https://sentry.io/get-cli/ | bash
 VERSION=$(sentry-cli releases propose-version)
 sentry-cli releases new -p llau-systems-web $VERSION && \
-sentry-cli releases set-commits $VERSION --commit "josellausas/llau-systems@$TRAVIS_COMMIT_RANGE" && \
+sentry-cli releases set-commits $VERSION --commit "josellausas/llau-systems" && \
 ./test.sh && \
 docker build -t zunware/llau-systems-web . && \
 ./push.sh
