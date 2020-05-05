@@ -24,6 +24,5 @@ urlpatterns = [
     path('tech/', views.techs),
     path('contact/', views.contact),
     path('api/v1/', include('apps.api.urls', namespace='api')),
-    path('.well-known/acme-challenge/3iINpXBv_iduFCIUDKJ1p2voT1oEaMxYqtTqJSD_Ip8', views.acme_challenge),
     re_path(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
 ]
