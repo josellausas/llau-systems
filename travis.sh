@@ -6,5 +6,5 @@ sentry-cli releases set-commits $VERSION --commit "josellausas/llau-systems" && 
 ./test.sh && \
 docker build -t zunware/llau-systems-web . && \
 ./push.sh && \
-sentry-cli releases finalize $VERSION
+sentry-cli releases finalize $VERSION && \
 sentry-cli releases deploys $VERSION new -e $ENVIRONMENT
