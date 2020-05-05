@@ -21,4 +21,4 @@ install:
 before_script:
   - psql -c "create database travisci;" -U postgres
 script:
-  - ./test.sh && docker build -t zunware/llau-systems-web . && ./push.sh
+  - ./travis.sh
