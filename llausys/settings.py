@@ -24,13 +24,13 @@ DEBUG = env('DEBUG')
 HOST = env('ALLOWED_HOST')
 WELL_KNOWN_KEY = env('WELL_KNOWN_KEY')
 SENTRY_DSN = env('SENTRY_DSN', default='')
-RELEASE_VERSION = env('RELEASE_VERSION', default='dev')
+VERSION = env('VERSION', default='dev')
 
 sentry_sdk.init(
     dsn=SENTRY_DSN,
     integrations=[DjangoIntegration()],
     send_default_pii=True,
-    release=f"llausys-web@{RELEASE_VERSION}"
+    release=VERSION
 )
 
 ALLOWED_HOSTS = [
