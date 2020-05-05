@@ -1,3 +1,4 @@
+
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.template.loader import get_template
@@ -11,6 +12,7 @@ def home(request):
         'title': 'LlauSys',
         'subtitle': 'Professional Services'
     }
+    # return render(request, 'skin/index.html', context)
     return render(request, 'main.html', context)
 
 
