@@ -4,7 +4,9 @@ import os
 import environ
 
 env = environ.Env(
-    DEBUG=(bool, False)
+    DEBUG=(bool, False),
+    HOST=(str, 'localhost'),
+    WELL_KNOWN_KEY = (str, 'unknown_key')
 )
 environ.Env.read_env()
 

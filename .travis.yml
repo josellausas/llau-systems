@@ -2,6 +2,7 @@ dist: xenial
 language: python
 services:
   - postgresql
+  - docker
 env:
   global:
   - DEBUG=False
@@ -20,4 +21,4 @@ install:
 before_script:
   - psql -c "create database travisci;" -U postgres
 script:
-  - python manage.py test
+  - ./test.sh && docker build -t zunware/llau-systems-web . && ./push.sh
