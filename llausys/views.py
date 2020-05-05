@@ -55,3 +55,4 @@ def contact(request):
 
 def acme_challenge(request):
     return HttpResponse(settings.WELL_KNOWN_KEY)
+
