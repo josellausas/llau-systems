@@ -1,5 +1,9 @@
 from django.test import TestCase, Client
 
+from bs4 import BeautifulSoup
+import re
+
+
 
 class LlauSysHomeTests(TestCase):
     def setUp(self):
@@ -13,10 +17,28 @@ class LlauSysHomeTests(TestCase):
         content = self.response.content.decode("utf-8")
         self.assertIn("Home", content)
         self.assertIn("Services", content)
-        self.assertIn("Projects", content)
-        self.assertIn("Technology", content)
-        self.assertIn("Services", content)
-        self.assertIn("Contact", content)
+        self.assertIn("Technologies", content)
+        self.assertIn("Open Source", content)
+
+    def test_links(self):
+        # Grab all the links from the homepage
+        res = self.client.get("/")
+        self.assertEqual(200, res.status_code)
+        soup = BeautifulSoup(res.content, 'html.parser')
+        
+        # Check that all links work
+        checked = {}
+        for link in soup.find_all('a'):
+            url = link.get('href')
+            if (url is not None) and ("http" not in url):
+                if url not in checked:
+                    response = self.client.get(url, follow=True)
+                    checked[url] = response.status_code
+                    self.assertEqual(
+                        200, 
+                        response.status_code, 
+                        f"Failed to GET {link.get('href')}"
+                )
 
 
 class LlauSysServicesTests(TestCase):
@@ -36,6 +58,26 @@ class LlauSysServicesTests(TestCase):
 
     def test_context(self):
         self.assertIn('Services', self.response.context['title'])
+    
+    def test_links(self):
+        # Grab all the links from the homepage
+        res = self.client.get("/services", follow=True)
+        self.assertEqual(200, res.status_code)
+        soup = BeautifulSoup(res.content, 'html.parser')
+        
+        # Check that all links work
+        checked = {}
+        for link in soup.find_all('a'):
+            url = link.get('href')
+            if (url is not None) and ("http" not in url):
+                if url not in checked:
+                    response = self.client.get(url, follow=True)
+                    checked[url] = response.status_code
+                    self.assertEqual(
+                        200, 
+                        response.status_code, 
+                        f"Failed to GET {link.get('href')}"
+                )
 
 
 class LlauSysProjectsTests(TestCase):
@@ -55,6 +97,26 @@ class LlauSysProjectsTests(TestCase):
 
     def test_context(self):
         self.assertIn('Projects', self.response.context['title'])
+
+    def test_links(self):
+        # Grab all the links from the homepage
+        res = self.client.get("/projects", follow=True)
+        self.assertEqual(200, res.status_code)
+        soup = BeautifulSoup(res.content, 'html.parser')
+        
+        # Check that all links work
+        checked = {}
+        for link in soup.find_all('a'):
+            url = link.get('href')
+            if (url is not None) and ("http" not in url):
+                if url not in checked:
+                    response = self.client.get(url, follow=True)
+                    checked[url] = response.status_code
+                    self.assertEqual(
+                        200, 
+                        response.status_code, 
+                        f"Failed to GET {link.get('href')}"
+                )
 
 
 class LlauSysTechnologiesTests(TestCase):

@@ -13,7 +13,8 @@ def home(request):
         'subtitle': 'Professional Services'
     }
     # return render(request, 'skin/index.html', context)
-    return render(request, 'main.html', context)
+    # return render(request, 'main.html', context)
+    return render(request, "soon.html", context)
 
 
 def services(request):
