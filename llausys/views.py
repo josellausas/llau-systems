@@ -1,4 +1,3 @@
-
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.template.loader import get_template
@@ -17,7 +16,7 @@ def soon_view(request):
             client = slack.WebClient(token=settings.SLACK_TOKEN)
             client.chat_postMessage(
                 channel='#llau-systems',
-                text=f"Spam attempt: {honey_name}"
+                text=f"[Spam]: {honey_name}"
             )
             return redirect("/")
     form = EmailLeadForm(request.POST or None, auto_id=False)
