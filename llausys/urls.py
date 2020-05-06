@@ -10,7 +10,8 @@ from apps.accounts.views import (
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.home),
+    # path('', views.home),
+    path('', views.soon_view, name='home'),
     path('login/', login_view, name='login'),
     path('logout/', logout_view, name='logout'),
     path('signup/', signup_view, name='signup'),
@@ -24,5 +25,6 @@ urlpatterns = [
     path('tech/', views.techs),
     path('contact/', views.contact),
     path('api/v1/', include('apps.api.urls', namespace='api')),
+    path('thanks/', views.notify_confirm, name="thanks"),
     re_path(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
 ]

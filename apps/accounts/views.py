@@ -14,7 +14,7 @@ def signup_view(request):
         honey_name = request.POST.get('name', False)
         honey_email = request.POST.get('email3', False)
         if honey_name or honey_email:
-            # Its a trap! TODO: Log bot spam attempt!
+            # Its a trap! Log bot spam attempt!
             client = slack.WebClient(token=settings.SLACK_TOKEN)
             client.chat_postMessage(
                 channel='#llau-systems',

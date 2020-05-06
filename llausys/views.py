@@ -1,10 +1,42 @@
 
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.template.loader import get_template
 from django.conf import settings
 
-from .forms import ContactForm
+import slack
+
+from .forms import ContactForm, EmailLeadForm
+
+def soon_view(request):
+    # Notify via Slack
+    if request.POST:
+        honey_name = request.POST.get('name', False)
+        if honey_name:
+            # Its a trap! Log bot spam attempt!
+            client = slack.WebClient(token=settings.SLACK_TOKEN)
+            client.chat_postMessage(
+                channel='#llau-systems',
+                text=f"Spam attempt: {honey_name}"
+            )
+            return redirect("/")
+    form = EmailLeadForm(request.POST or None, auto_id=False)
+    if form.is_valid():
+        lead = form.save(commit=False)
+        lead.topic = "home/notify/release"
+        lead.save()
+        client = slack.WebClient(token=settings.SLACK_TOKEN)
+        client.chat_postMessage(
+            channel='#llau-systems',
+            text=f"New Lead: [{lead.topic}]: {lead.email}"
+        )
+        return redirect("/thanks")
+    context = {
+        'title': 'LlauSys',
+        'subtitle': 'Professional Services',
+        "form": form
+    }
+    return render(request, "soon.html", context)
 
 
 def home(request):
@@ -56,4 +88,11 @@ def contact(request):
 
 def acme_challenge(request):
     return HttpResponse(settings.WELL_KNOWN_KEY)
+
+def notify_confirm(request):
+    context = {
+        'title': 'Thanks!',
+        'subtitle': 'You are now receiving updates!',
+    }
+    return render(request, 'thanks.html',context=context)
 
