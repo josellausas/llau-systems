@@ -7,8 +7,9 @@ from sentry_sdk.integrations.django import DjangoIntegration
 
 env = environ.Env(
     DEBUG=(bool, False),
-    HOST=(str, 'localhost'),
-    WELL_KNOWN_KEY = (str, 'unknown_key')
+    ALLOWED_HOST=(str, 'localhost'),
+    WELL_KNOWN_KEY = (str, 'unknown_key'),
+    SLACK_TOKEN = (str, 'unknown_key')
 )
 environ.Env.read_env()
 
