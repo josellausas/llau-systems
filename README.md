@@ -2,6 +2,7 @@
 
 [![Build Status](https://travis-ci.com/zunware/llau-systems.svg?token=pPjgy1gbyCJtL7uhrXTa&branch=develop)](https://travis-ci.com/zunware/llau-systems)
 [![Coverage Status](https://coveralls.io/repos/github/josellausas/llau-systems/badge.svg?branch=develop)](https://coveralls.io/github/josellausas/llau-systems?branch=develop)
+![Tests](https://github.com/josellausas/llau-systems/workflows/Tests/badge.svg?branch=master)
 
 ## Install and run
 
