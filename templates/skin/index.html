@@ -1,17 +1,23 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="zxx">
+<html lang="eng">
     <head>
-        <!-- meta tag -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-165740071-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'UA-165740071-1');
+        </script>
         <meta charset="utf-8">
-        <title>Home | Tekhub - Multipurpose Startups HTML5 Template</title>
+        <title>Home | Llau.systems</title>
         <meta name="description" content="">
         <!-- responsive tag -->
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- favicon -->
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
-        <link rel="shortcut icon" type="image/x-icon" href="{% static 'assets/images/fav.png' %}">
+        <link rel="shortcut icon" type="image/x-icon" href="{% static 'favicon.ico' %}">
         <!-- bootstrap v4 css -->
         <link rel="stylesheet" type="text/css" href="{% static 'assets/css/bootstrap.min.css' %}">
         <!-- font-awesome css -->
@@ -68,7 +74,7 @@
                         <div class="row">
                             <div class="col-lg-2">
                                 <div class="logo-area">
-                                    <a class="logo" href="index.html"><img src="{% static 'assets/images/logo.png' %}" alt="logo"></a>
+                                    <a class="logo" href="/"><img src="{% static 'img/logo_bar.png' %}" alt="logo"></a>
                                 </div>
                             </div>
                             <div class="col-lg-10 text-right">
@@ -92,8 +98,9 @@
                                                 <!-- Services Start -->
                                                 <li class="menu-item-has-children"><a href="#">Services</a>
                                                     <ul class="sub-menu">
-                                                        <li><a href="services.html">Services</a></li>
-                                                        <li><a href="service-single.html">Service Single</a></li>
+                                                        <li><a href="services.html">Digital Strategies</a></li>
+                                                        <li><a href="service-single.html">Development</a></li>
+                                                        <li><a href="service-single.html">Content Creation</a></li>
                                                     </ul>
                                                 </li>
                                                 <!-- Services End -->
@@ -105,14 +112,14 @@
                                                 <!-- Blog Start -->
                                                 <li class="menu-item-has-children"><a href="#">Blog</a>
                                                     <ul class="sub-menu left-side">
-                                                        <li><a href="blog.html">Blog Grid</a> </li>
+                                                        <li><a href="blog.html">Technology</a> </li>
                                                         <li class="menu-item-has-children"><a href="#">Blog Sidebar</a>
                                                             <ul class="sub-menu">
                                                                 <li><a href="blog-left.html">Left Sidebar</a></li>
                                                                 <li><a href="blog-right.html">Right Sidebar</a></li>
                                                             </ul>
                                                         </li>
-                                                        <li><a href="blog-details.html">Blog Details</a></li>
+                                                        <li><a href="blog-details.html">Marketing</a></li>
                                                     </ul>
                                                 </li>
                                                 <!-- Blog End -->
@@ -128,7 +135,7 @@
                                             <li class="icon-bar cart-inner mini-cart-active">
                                                 <a class="cart-icon"><i class="flaticon-bag" aria-hidden="true"></i>
                                                 </a>
-                                                <div class="woocommerce-mini-cart text-left">
+                                                {% comment %} <div class="woocommerce-mini-cart text-left">
                                                     <ul class="cart-icon-product-list">
                                                         <li class="display-flex">
                                                             <div class="icon-cart">
@@ -165,7 +172,7 @@
                                                         <a class="crt-btn btn1" href="cart.html">View Cart</a>
                                                         <a class="crt-btn btn2" href="checkout.html">Check Out</a>
                                                     </div>
-                                                </div> 
+                                                </div>  {% endcomment %}
                                             </li>
                                             <li>
                                                 <a class="hidden-xs rs-search" data-target=".search-modal" data-toggle="modal" href="#">
@@ -194,7 +201,7 @@
                         <!-- MINIMUM SLIDE STRUCTURE -->
                         <li data-transition="fade">
                             <!-- SLIDE'S MAIN BACKGROUND IMAGE -->
-                            <img class="rev-slidebg " src="{% static 'assets/images/banner/banner_bg.jpg' %}"
+                            <img class="rev-slidebg " src="{% static 'assets/images/banner/banner_bg_k.jpg' %}"
                             alt=""
                             data-bgposition="right"
                             data-bgfit="cover"
@@ -217,7 +224,7 @@
                                 data-paddingright="[0,0,0,0]"
                                 data-paddingbottom="[0,0,0,0]"
                                 data-paddingleft="[20,20,20,20]">
-                                Natural Language <br> Processing
+                                Intelligent Business<br />Solutions
                             </h1>
                             <div 
                                 class="tp-caption tp-resizeme banner-desc"
@@ -254,7 +261,7 @@
                                 data-paddingright="[0,0,0,0]"
                                 data-paddingbottom="[0,0,0,0]"
                                 data-paddingleft="[20,20,20,20]">
-                                <a class="readon sl-btn" href="#">Get Started</a>
+                                <a class="readon sl-btn" href="#">Start Here</a>
                             </div>
                             <div 
                                 class="tp-caption tp-resizeme button-part"
@@ -489,7 +496,7 @@
                 <div class="row">
                     <div class="col-xl-5 pr-0 relative hide-over md-mb-30">
                         <div class="sec-title pl-45">
-                            <h2 class="title">Convert Your Structured Data With NLP.</h2>
+                            <h2 class="title">Managed digital services <br/> for the digital age</h2>
                         </div>
                         <div class="feature-img">
                             <div class="circle-ring"></div>
@@ -510,8 +517,8 @@
                                         <img src="{% static 'assets/images/feature/icon/1.png' %}" alt="">
                                     </div>
                                     <div class="content-part">
-                                        <h3 class="title mb-21">Leadership & Goverence</h3>
-                                        <div class="desc">Lorem ipsum dolor sit amet, consectetur sedo adipiscing elit sed.</div>
+                                        <h3 class="title mb-21">Design & Development</h3>
+                                        <div class="desc">Web and Mobile development. Agile implementations for your business needs</div>
                                     </div>
                                 </div>
                                 <div class="feature-wrap sm-mb-57">
@@ -520,8 +527,8 @@
                                         <img src="{% static 'assets/images/feature/icon/3.png' %}" alt="">
                                     </div>
                                     <div class="content-part">
-                                        <h3 class="title mb-21">Investor Information</h3>
-                                        <div class="desc">Lorem ipsum dolor sit amet, consectetur sedo adipiscing elit sed.</div>
+                                        <h3 class="title mb-21">Cloud Hosting</h3>
+                                        <div class="desc">Secure cloud hosting and monitoring.</div>
                                     </div>
                                 </div>
                             </div>
@@ -532,7 +539,7 @@
                                         <img src="{% static 'assets/images/feature/icon/2.png' %}" alt="">
                                     </div>
                                     <div class="content-part">
-                                        <h3 class="title mb-21">Vision & Technology</h3>
+                                        <h3 class="title mb-21">Digital Marketing</h3>
                                         <div class="desc">Lorem ipsum dolor sit amet, consectetur sedo adipiscing elit sed.</div>
                                     </div>
                                 </div>
@@ -542,7 +549,7 @@
                                         <img src="{% static 'assets/images/feature/icon/4.png' %}" alt="">
                                     </div>
                                     <div class="content-part">
-                                        <h3 class="title mb-21">Developer Community</h3>
+                                        <h3 class="title mb-21">E-commerce</h3>
                                         <div class="desc">Lorem ipsum dolor sit amet, consectetur sedo adipiscing elit sed.</div>
                                     </div>
                                 </div>
@@ -560,7 +567,7 @@
             <div class="flow-wrap">
                 <div class="flow-left flow-common">
                     <div class="content">
-                        <h3 class="title mb-0">Data Resource</h3>
+                        <h3 class="title mb-0">Information</h3>
                     </div>
                 </div>
 
@@ -568,6 +575,7 @@
                     <div class="icon-wrap">
                         <img class="spine" src="{% static 'assets/images/flow/1.png' %}" alt="">
                     </div>
+                    <p>Business Intelligence</p>
                 </div>
 
                 <div class="flow-center flow-common">
@@ -576,17 +584,17 @@
                         <div class="col-6">
                             <div class="empty-space-left"></div>
                             <ul class="flowlist-left text-left">
-                                <li>Data Storage</li>
-                                <li>Real Time Ingension</li>
-                                <li>Analytical Report</li>
+                                <li>Data Analytics<br/><small>What does all this information mean? By measuring we gain insight.</small></li>
+                                <li>Secure Cloud<br/><small>99% Uptime and peace of mind with avant-garde techniques and enterprise services.</small></li>
+                                <li>Real-time monitoring<br/><small>By receiving real-time alerts we can respond to change.</small></li>
                             </ul>
                         </div>
                         <div class="col-6">
                             <div class="empty-space-right"></div>
                             <ul class="flowlist-right text-right">
-                                <li>Data Prevention</li>
-                                <li>Language Outline</li>
-                                <li>Translate Language</li>
+                                <li>Rapid application development<br/><small>Move faster than your competitors with RAD development. Quality Web and mobile apps, fast!</small></li>
+                                <li>Marketing Strategies<br/><small>Utilize your precious marketing resources where it counts. Get found and increase sales!</small></li>
+                                <li>Original Content<br/><small>Build a community around your brand with original content.</small></li>
                             </ul>
                         </div>
                     </div>
@@ -596,11 +604,12 @@
                     <div class="icon-wrap">
                         <img class="spine2" src="{% static 'assets/images/flow/2.png' %}" alt="">
                     </div>
+                    <p>Executive Reports</p>
                 </div>
 
                 <div class="flow-right flow-common">
                     <div class="content">
-                        <h3 class="title mb-0">Data Report</h3>
+                        <h3 class="title mb-0">Better Business Decisions</h3>
                     </div>
                 </div>
             </div>
@@ -611,7 +620,7 @@
         <div class="rs-services bg2 pt-131 pb-132 md-pt-71 md-pb-75">
             <div class="container">
                 <div class="sec-title text-center mb-68 sm-mb-48">
-                    <h2 class="title white-color mb-0">Develop A Powerfull NLP Application</h2>
+                    <h2 class="title white-color mb-0">Build A Powerfull Digital Pressence</h2>
                 </div>
                 <div class="row">
                     <div class="col-lg-4 col-md-6 col-sm-6 pt-11 pr-50 sm-col-padding">
@@ -621,7 +630,7 @@
                                 <img src="{% static 'assets/images/services/icon/1.png' %}" alt="">
                             </div>
                             <div class="content-part">
-                                <h3 class="title mb-21"><a href="#">Machine Learning</a></h3>
+                                <h3 class="title mb-21"><a href="#">Managed Services</a></h3>
                                 <div class="desc">Lorem ipsum dolor sit amet elit sed. consectetur sedo adipi amet lio.</div>
                             </div>
                         </div>
@@ -633,7 +642,7 @@
                                 <img src="{% static 'assets/images/services/icon/2.png' %}" alt="">
                             </div>
                             <div class="content-part">
-                                <h3 class="title mb-21"><a href="#">Question Answering</a></h3>
+                                <h3 class="title mb-21"><a href="#">Expert Support</a></h3>
                                 <div class="desc">Lorem ipsum dolor sit amet elit sed. consectetur sedo adipi amet lio.</div>
                             </div>
                         </div>
@@ -645,7 +654,7 @@
                                 <img src="{% static 'assets/images/services/icon/3.png' %}" alt="">
                             </div>
                             <div class="content-part">
-                                <h3 class="title mb-21"><a href="#">Information Extraction</a></h3>
+                                <h3 class="title mb-21"><a href="#">Custom Solutions</a></h3>
                                 <div class="desc">Lorem ipsum dolor sit amet elit sed. consectetur sedo adipi amet lio.</div>
                             </div>
                         </div>
@@ -657,7 +666,7 @@
                                 <img src="{% static 'assets/images/services/icon/4.png' %}" alt="">
                             </div>
                             <div class="content-part">
-                                <h3 class="title mb-21"><a href="#">Machine Translation</a></h3>
+                                <h3 class="title mb-21"><a href="#">Gamification</a></h3>
                                 <div class="desc">Lorem ipsum dolor sit amet elit sed. consectetur sedo adipi amet lio.</div>
                             </div>
                         </div>
@@ -669,7 +678,7 @@
                                 <img src="{% static 'assets/images/services/icon/6.png' %}" alt="">
                             </div>
                             <div class="content-part">
-                                <h3 class="title mb-21"><a href="#">Semantic Search</a></h3>
+                                <h3 class="title mb-21"><a href="#">Open Source</a></h3>
                                 <div class="desc">Lorem ipsum dolor sit amet elit sed. consectetur sedo adipi amet lio.</div>
                             </div>
                         </div>
@@ -681,7 +690,7 @@
                                 <img src="{% static 'assets/images/services/icon/5.png' %}" alt="">
                             </div>
                             <div class="content-part">
-                                <h3 class="title mb-21"><a href="#">Speech Recognition</a></h3>
+                                <h3 class="title mb-21"><a href="#">Creative Content</a></h3>
                                 <div class="desc">Lorem ipsum dolor sit amet elit sed. consectetur sedo adipi amet lio.</div>
                             </div>
                         </div>
@@ -953,9 +962,9 @@
             <div class="container">
                 <div class="cta-wrap red-bg">
                     <div class="content-part">
-                        <h2 class="title white-color mb-28">Lets Move Forward</h2>
+                        <h2 class="title white-color mb-28">Tell us about your project!</h2>
                         <div class="btn-part">
-                            <a href="#">Get Started</a>
+                            <a href="#">Free Consultation!</a>
                         </div>
                     </div>
                     <div class="inner-spiner">
