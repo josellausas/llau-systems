@@ -96,3 +96,10 @@ def notify_confirm(request):
     }
     return render(request, 'thanks.html',context=context)
 
+def about(request):
+    context = {
+        'title': 'LlauSys',
+        'subtitle': 'Professional Services'
+    }
+    return render(request, 'skin/about.html', context)
+
