@@ -282,10 +282,10 @@ ul {
 .readon {
   padding: 13px 36px;
   font-weight: 500;
-  background: #458dff;
+  background: #EA5356;
   color: #ffffff;
   cursor: pointer;
-  border: 2px solid #458dff;
+  border: 2px solid #E74148;
   display: inline-block;
   text-transform: uppercase;
   text-align: center;
@@ -987,7 +987,7 @@ ul {
 .rs-work-flow .flow-wrap .flow-common.flow-left {
   width: 15%;
   text-align: left;
-  border-color: #ffdb49;
+  border-color: #EA5356;
   border-width: 2px;
   border-style: dashed dashed dashed none;
   border-radius: 0 30px 30px 0;
@@ -1056,7 +1056,7 @@ ul {
   width: 70px;
   position: absolute;
   z-index: -1;
-  border-color: #ffdb49;
+  border-color: #EA5356;
   border-width: 2px;
   border-style: dashed none dashed dashed;
   border-radius: 30px 0 0 30px;
@@ -1080,7 +1080,7 @@ ul {
   position: absolute;
   right: 0;
   z-index: -1;
-  border-color: #ffdb49;
+  border-color: #EA5356;
   border-width: 2px;
   border-style: dashed dashed dashed none;
   border-radius: 0 30px 30px 0;
@@ -1225,7 +1225,7 @@ ul {
 .rs-work-flow .flow-wrap .flow-common.flow-right {
   width: 15%;
   text-align: left;
-  border-color: #ffdb49;
+  border-color: #EA5356;
   border-width: 2px;
   border-style: dashed none dashed dashed;
   border-radius: 30px 0 0 30px;

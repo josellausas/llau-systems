@@ -10,8 +10,7 @@ from apps.accounts.views import (
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    # path('', views.home),
-    path('', views.soon_view, name='home'),
+    path('', views.home, name='home'),
     path('login/', login_view, name='login'),
     path('logout/', logout_view, name='logout'),
     path('signup/', signup_view, name='signup'),

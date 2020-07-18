@@ -43,9 +43,10 @@ def home(request):
         'title': 'LlauSys',
         'subtitle': 'Professional Services'
     }
-    # return render(request, 'skin/index.html', context)
     # return render(request, 'main.html', context)
-    return render(request, "soon.html", context)
+    # return render(request, "soon.html", context)
+    return render(request, 'skin/index.html', context)
+    
 
 
 def services(request):
@@ -94,4 +95,11 @@ def notify_confirm(request):
         'subtitle': 'You are now receiving updates!',
     }
     return render(request, 'thanks.html',context=context)
+
+def about(request):
+    context = {
+        'title': 'LlauSys',
+        'subtitle': 'Professional Services'
+    }
+    return render(request, 'skin/about.html', context)
 
