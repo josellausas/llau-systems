@@ -15,11 +15,11 @@ def signup_view(request):
         honey_email = request.POST.get('email3', False)
         if honey_name or honey_email:
             # Its a trap! Log bot spam attempt!
-            client = slack.WebClient(token=settings.SLACK_TOKEN)
-            client.chat_postMessage(
-                channel='#llau-systems',
-                text=f"Spam attempt: {honey_name} - {honey_email}"
-            )
+            # client = slack.WebClient(token=settings.SLACK_TOKEN)
+            # client.chat_postMessage(
+            #     channel='#llau-systems',
+            #     text=f"Spam attempt: {honey_name} - {honey_email}"
+            # )
             return redirect("/")
     form = UserRegisterForm(request.POST or None)
     if form.is_valid():
