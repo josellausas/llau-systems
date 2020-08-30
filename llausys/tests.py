@@ -4,7 +4,6 @@ from bs4 import BeautifulSoup
 import re
 
 
-
 class LlauSysHomeTests(TestCase):
     def setUp(self):
         self.response = self.client.get("/")

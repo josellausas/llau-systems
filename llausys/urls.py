@@ -2,6 +2,7 @@
 """
 from django.contrib import admin
 from django.urls import path, re_path, include
+from rest_framework.authtoken.views import obtain_auth_token
 from . import views
 from apps.blog.views import blog_post_create
 from apps.accounts.views import (
@@ -9,6 +10,7 @@ from apps.accounts.views import (
 )
 
 urlpatterns = [
+    path('api-token/', obtain_auth_token, name="api_token"),
     path('admin/', admin.site.urls),
     path('', views.home, name='home'),
     path('login/', login_view, name='login'),
