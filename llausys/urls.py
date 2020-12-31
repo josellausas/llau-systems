@@ -9,6 +9,11 @@ from apps.accounts.views import (
     login_view, logout_view, signup_view, my_profile_view
 )
 
+# Admin panel config
+admin.site.site_header = "Llau Systems"
+admin.site.site_title = "Admin Site"
+admin.site.index_title = "Welcome to Llau Systems Admin"
+
 urlpatterns = [
     path('api-token/', obtain_auth_token, name="api_token"),
     path('admin/', admin.site.urls),

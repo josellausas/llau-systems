@@ -35,3 +35,21 @@ Run in Kubernetes
 `kubectl run llausys-web --env="DB_PASSWORD=''" --env="DB_HOST=localhost" --image=zunware/llau-systems-web:latest --port 8000`
 
 `k apply -f postgres-deployment.yml && k apply -f django-deployment.yml`
+
+# API
+
+## User Auth
+
+- [ ] Add Oauth auth
+
+## Analytics
+
+- [ ] Create a 'Log' API endpoint
+
+## Apps
+
+- [ ] create a `apps/` API to manage different apps
+
+## Deep Links
+
+- [ ] Implement well known file to be availble for Apple deep links

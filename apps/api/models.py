@@ -33,7 +33,7 @@ class UserGame(models.Model):
     is_favorite = models.BooleanField(default=False)
 
     def __str__(self):
-        return f"{game}:{user}"
+        return f"{self.game}:{self.user}"
 
     class Meta:
         ordering = ['created']
